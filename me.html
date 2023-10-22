@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raveena's Instagram Gallery</title>
+  <style>
+    body {
+      background-color: #fafafa;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    #gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 16px;
+      background-color: white;
+      border: 1px solid #ccc;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center; 
+      justify-content: center; 
+      cursor: pointer;
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 8px;
+      font-size: 14px;
+      color: #333;
+      text-align: center;
+      display: none;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .modal img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .modal-caption {
+      margin-top: 8px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    #close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: white;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="gallery">
+  
+  <div class="photo" onclick="openModal('page0 11.JPG', 'A visual symphony of love, laughter and delightful furry companion, etched in every frame . Got injured at same time 😢')">
+    <img src="page0 11.JPG" alt="page0 11.JPG">
+    <div class="caption"></div>
+  </div>
+  <div class="photo" onclick="openModal('page0 10.JPG', 'Radiating joy with every smile, turning moments into timeless happiness. I am looking cute though.😌')">
+    <img src="page0 10.JPG" alt="page0 10.JPG">
+    <div class="caption"></div>
+  </div>
+  <div class="photo" onclick="openModal('page0 9.JPG', 'Wrapped in whispers of white, a potrait of chic charm where my style speaks volumes without uttering a word. 🕊️💫')">
+    <img src="page0 9.JPG" alt="page0 9.JPG">
+    <div class="caption"></div>
+  </div>
+  <div class="photo" onclick="openModal('page0 8.JPG', 'Dripping glamour and curves that ignite, setting the scene on fire. 🔥✨')">
+    <img src="page0 8.JPG" alt="page0 8.JPG">
+    <div class="caption"></div>
+  </div>
+  <div class="photo" onclick="openModal('page0 6.JPG', 'Setting the world ablaze in bold hues, my style speaks volumes without uttering a word. 💃🔥')">
+    <img src="page0 6.JPG" alt="page0 6.JPG">
+    <div class="caption"></div>
+  </div>
+  <div class="photo" onclick="openModal('page0 5.JPG', 'Grace in every gaze, adorned in timeless tradition, where modesty meets elegance. 🌸')">
+    <img src="page0 5.JPG" alt="page0 5.JPG">
+    <div class="caption"></div>
+  </div>
+  <div class="photo" onclick="openModal('page0 4.JPG', 'Unleasing the charm of pets stealing the spotlight, frame by frame.🤍🖤🤍🖤 ')">
+    <img src="page0 4.JPG" alt="page0 4.JPG">
+    <div class="caption"> </div>
+  </div>
+</div>
+
+<div class="modal" id="modal" onclick="closeModal()">
+  <div class="modal-content">
+    <span id="close-modal">&times;</span>
+    <img src="" id="modal-image" alt="Modal Image">
+    <div class="modal-caption" id="modal-caption"></div>
+  </div>
+</div>
+
+<script>
+  function openModal(imageUrl, caption) {
+    document.getElementById('modal-image').src = imageUrl;
+    document.getElementById('modal-caption').innerText = caption;
+    document.getElementById('modal-caption').style.display = 'block';
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('modal-caption').style.display = 'none';
+    document.getElementById('modal').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
