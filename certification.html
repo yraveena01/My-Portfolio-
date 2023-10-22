@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raveena's Certifications</title>
+  <style>
+    body {
+      background-color: white;
+      color: rgb(251, 248, 248);
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      border: 5px solid black;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-image: url('Untitled design.png');
+    }
+
+    .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #certification-list {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid rgb(252, 250, 250);
+      background-color: rgb(4, 1, 1);
+      border-radius: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    li {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    img {
+      width: 4cm;
+      height: 4cm;
+      border-radius: 50%;
+      margin-right: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    h2, p {
+      margin: 0;
+      color: rgb(251, 249, 249);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      max-width: 80%;
+      max-height: 80%;
+      overflow: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .modal img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    #close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: black;
+      font-size: 20px;
+    }
+
+    
+    li:hover img {
+      transform: scale(1.2);
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+
+<div id="certification-list">
+  <h1>My Certifications</h1>
+  <ul>
+    <li onclick="openCertificateModal('IMG_3340.jpg')">
+      <img src="/Users/admin/Desktop/my portfolio /simplilearn .png" alt="simplilearn .png">
+      <div>
+        <h2>Machine Learning </h2>
+        <p>Issuing Body: Simplilearn</p>
+        <p>Issued: July 2023</p>
+      </div>
+    </li>
+    <li onclick="openCertificateModal('IMG_3338.jpg')">
+        <img src="/Users/admin/Desktop/my portfolio /simplilearn .png" alt="simplilearn .png">
+        <div>
+          <h2>Programming with Python 3.x</h2>
+          <p>Issuing Body: Simplilearn</p>
+          <p>Issued: July 2023</p>
+        </div>
+      </li>
+      <li onclick="openCertificateModal('IMG_3341.jpg')">
+        <img src="/Users/admin/Desktop/my portfolio /efa.jpeg" alt="efa.jpeg">
+        <div>
+          <h2>Microsoft office (MS excel, MS word, MS powerpoint)</h2>
+          <p>Issuing Body: EFA courses</p>
+          <p>Issued: May 2023</p>
+        </div>
+      </li>
+      <li onclick="openCertificateModal('IMG_3342.jpg')">
+        <img src="/Users/admin/Desktop/my portfolio /udemy .jpeg" alt="udemy .jpeg">
+        <div>
+          <h2>Microsoft excel - Excel from beginner to advanced</h2>
+          <p>Issuing Body: Udemy</p>
+          <p>Issued: December 2022</p>
+        </div>
+      </li>
+      <li onclick="openCertificateModal('great learning .png')">
+        <img src="/Users/admin/Desktop/my portfolio /great learning .png" alt="great learning .png">
+        <div>
+          <h2>Instagram marketing fundamentals</h2>
+          <p>Issuing Body: Great Learning</p>
+          <p>Issued: July 2023</p>
+        </div>
+      </li>
+  
+   
+  </ul>
+</div>
+
+<div class="modal" id="certificate-modal" onclick="closeCertificateModal()">
+  <div class="modal-content">
+    <span id="close-modal" onclick="closeCertificateModal">&times;</span>
+    <img src="" id="certificate-image" alt="Certificate Image">
+  </div>
+</div>
+
+<script>
+  function openCertificateModal(imageUrl) {
+    document.getElementById('certificate-image').src = imageUrl;
+    document.getElementById('certificate-modal').style.display = 'flex';
+  }
+
+  function closeCertificateModal() {
+    document.getElementById('certificate-modal').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
